@@ -1,0 +1,22 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'gallery/css/main.css' %}" />
+
+<script src="{% static 'gallery/js/jquery-1.10.2.min.js' %}" ></script>
+<script src="{% static 'gallery/js/main.js' %}" ></script>
+
+{% if gallery_list %}
+    <div id="rotator">
+    	<div class="next nav">NEXT</div>
+    	<div class="prev nav">PREV</div>
+    	<div id="gallery-container">
+	    {% for gallery in gallery_list %}
+	    	<a class="gallery-block" href="{% url 'gallery:gallery' gallery.id %}">
+	    		<h1>{{ gallery.title }}</h1>
+	    		<img src='{% static "gallery/media/"|add:gallery.cover_photo.photo.url %}' width="600" height='600' /></a>
+    	{% endfor %}
+    	</div>
+    </div>
+{% else %}
+    <p>No Galleries are available.</p>
+{% endif %}
