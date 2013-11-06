@@ -9,12 +9,12 @@ class Gallery(models.Model):
 	def cover_photo(self):
 		return self.image_set.all()[0]
 
-fs = FileSystemStorage(location='gallery/static/gallery/media')
+#fs = FileSystemStorage(location='/home/media')
 
 class Image(models.Model):
 	gallery = models.ForeignKey(Gallery)
 	title = models.CharField(max_length=200)
 	desc = models.TextField(max_length=None)
 	pub_date = models.DateTimeField('date published')
-	photo = models.ImageField(storage=fs,upload_to='photos/%Y/%m/%d')
-	#photo = models.ImageField(upload_to='photos/%Y/%m/%d')
+	#photo = models.ImageField(storage=fs,upload_to='photos/%Y/%m/%d')
+	photo = models.ImageField(upload_to='photos/%Y/%m/%d')

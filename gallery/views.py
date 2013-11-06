@@ -12,7 +12,7 @@ class IndexView(generic.ListView):
     def get_queryset(self):
 	    return Gallery.objects.filter(
 	        pub_date__lte=timezone.now()
-	    ).order_by('-pub_date')[:5]
+	    ).order_by('pub_date')[:5]
 
 class GalleryView(generic.DetailView):
     model = Gallery

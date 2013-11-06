@@ -1,0 +1,14 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'gallery/css/main.css' %}" />
+
+	<script src="{% static 'gallery/js/jquery-1.10.2.min.js' %}" ></script>
+	<script src="{% static 'gallery/js/main.js' %}" ></script>
+</head>
+<body>
+	{% block content %}{% endblock %}
+</body>
+</html>

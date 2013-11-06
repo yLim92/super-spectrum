@@ -24,3 +24,7 @@
 	width: 600px;
 	height: 600px;
 }
+#gallery-container .gallery-block img {
+	height: inherit;
+	width: inherit;
+}

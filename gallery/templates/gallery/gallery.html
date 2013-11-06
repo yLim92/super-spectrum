@@ -1,0 +1,17 @@
+{% extends "gallery/application.html" %}
+
+{% block content %}
+    <div id="rotator">
+    	<div class="next nav">NEXT</div>
+    	<div class="prev nav">PREV</div>
+    	<div id="gallery-container">
+	    	 {% for image in gallery.image_set.all %}
+		    	<div class="gallery-block">
+		    		<h1>{{ image.title }}</h1>
+		    		<img src='{{ STATIC_URL|add:image.photo.url }}'></img>
+		    	</div>
+	    	{% endfor %}
+    	</div>
+    </div>
+	
+{% endblock %}
